@@ -36,6 +36,10 @@ body {
     gap: 10px;
 }
 
+.bayan__item {
+    border-top: 2px solid lightgray;
+}
+
 .bayan__change {
     position: relative;
 }
@@ -44,6 +48,8 @@ body {
 p {
     color: blue;
     font-size: 1.2rem;
+
+    margin-bottom: 10px;
 }
 
 label {
@@ -61,9 +67,14 @@ label {
 }
 
 .bayan__img {
+    width: 100%;
+
     position: absolute;
     top: -9999px;
     right: -9999px;
+
+    align-self: center;
+
     opacity: 0;
     transform: scale(0.7);
 
@@ -93,4 +104,78 @@ label {
     position: absolute;
     top: -10px;
     right: 0px;
+}
+
+@media screen and (min-width: 500px) {
+    body {
+        padding: 0 2em;
+    }
+
+    .container {
+        max-width: 800px;
+        font-size: 2rem;
+    }
+
+    img {
+        max-width: 400px;
+        width: 100%;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        padding: 0 4em;
+    }
+
+    .container {
+        max-width: calc(1920px - 4em);
+        font-size: 2rem;
+    }
+
+    .bayan {
+        gap: 0;
+    }
+
+    .bayan__item {
+        padding-top: 10px;
+    }
+
+    img {
+        max-width: 400px;
+        width: 100%;
+        height: 300px;
+    }
+
+    p {
+        font-size: 2rem;
+    }
+
+    .bayan:hover p{
+        color: black;
+    }
+
+    .bayan:hover label {
+        cursor: pointer;
+    }
+
+    .bayan__item:hover img {
+        transition: all 0.3 ease;
+    } 
+
+
+    .bayan__item:hover img {
+        position: sticky;
+        transform: scale(1);
+        opacity: 1;
+        transition: all 0.3s ease;
+    }
+
+    .bayan__change:has(.bayan__radio:active) {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
 }
