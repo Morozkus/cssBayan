@@ -11,11 +11,86 @@
 }
 
 body {
+    overflow-x: hidden;
     height: 100%;
     font-size: 16px;
+    font-weight: bold;
+    padding: 0 0.5em;
+}
+
+.hr {
+    height: 2px;
+    background-color: gray;
+    opacity: 0.5;
 }
 
 .container {
+    margin: auto;
     max-width: 425px;
     width: 100%;
+}
+
+.bayan {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bayan__change {
+    position: relative;
+}
+
+
+p {
+    color: blue;
+    font-size: 1.2rem;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+}
+
+.bayan__radio {
+    position: absolute;
+    opacity: 0;
+}
+
+.bayan__radio:checked ~ p{
+    color: black;
+}
+
+.bayan__img {
+    position: absolute;
+    top: -9999px;
+    right: -9999px;
+    opacity: 0;
+    transform: scale(0.7);
+
+    transition: all 0.3s ease;
+    
+}
+
+.bayan__radio:checked ~ img {
+    position: sticky;
+    transform: scale(1);
+    opacity: 1;
+}
+
+.bayan__change::after {
+    content: '+';
+    font-weight: bold;
+    font-size: 2rem;
+    position: absolute;
+    top: -10px;
+    right: 0px;
+}
+
+.bayan__change:has(.bayan__radio:checked)::after {
+    content: 'x';
+    font-weight: bold;
+    font-size: 2rem;
+    position: absolute;
+    top: -10px;
+    right: 0px;
 }
